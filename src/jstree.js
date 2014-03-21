@@ -6,6 +6,9 @@
  *
  * Licensed same as jquery - under the terms of the MIT License
  *   http://www.opensource.org/licenses/mit-license.php
+ * 
+ * Forked by Lachlan McMillan
+ * @date 2014-03-21
  */
 /*!
  * if using jslint please allow for the jQuery global and use following options: 
@@ -2730,13 +2733,14 @@
 		 * @name create_node([obj, node, pos, callback, is_loaded])
 		 * @param  {mixed}   par       the parent node
 		 * @param  {mixed}   node      the data for the new node (a valid JSON object, or a simple string with the name)
-		 * @param  {mixed}   pos       the index at which to insert the node, "first" and "last" are also supported, default is "last"
+		 * @param  {mixed}   pos       the index at which to insert the node as an integer, also supported are "first", "last", "before", "after", "inside", default is "last"
 		 * @param  {Function} callback a function to be called once the node is created
 		 * @param  {Boolean} is_loaded internal argument indicating if the parent node was succesfully loaded
+		 * @param  {Boolean} full return the full node
 		 * @return {String}            the ID of the newly create node
 		 * @trigger model.jstree, create_node.jstree
 		 */
-		create_node : function (par, node, pos, callback, is_loaded) {
+		create_node : function (par, node, pos, callback, is_loaded, full) {
 			par = this.get_node(par);
 			if(!par) { return false; }
 			pos = pos === undefined ? "last" : pos;
@@ -2811,7 +2815,7 @@
 			 * @param {Number} position the position of the new node among the parent's children
 			 */
 			this.trigger('create_node', { "node" : this.get_node(node), "parent" : par.id, "position" : pos });
-			return node.id;
+			return full ? node : node.id;
 		},
 		/**
 		 * set the text value of a node
