@@ -2735,7 +2735,7 @@
 		 * @param  {mixed}   node      the data for the new node (a valid JSON object, or a simple string with the name)
 		 * @param  {mixed}   pos       the index at which to insert the node as an integer, also supported are "first", "last", "before", "after", "inside", default is "last"
 		 * @param  {Function} callback a function to be called once the node is created
-		 * @param  {Boolean} is_loaded internal argument indicating if the parent node was succesfully loaded
+		 * @param  {Boolean} is_loaded internal argument indicating if the parent node was successfully loaded
 		 * @param  {Boolean} full return the full node
 		 * @return {String}            the ID of the newly create node
 		 * @trigger model.jstree, create_node.jstree
