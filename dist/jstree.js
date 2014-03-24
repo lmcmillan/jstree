@@ -22,7 +22,7 @@
  *   http://www.opensource.org/licenses/mit-license.php
  * 
  * Forked by Lachlan McMillan
- * @date 2014-03-21
+ * @date 2014-03-25
  */
 /*!
  * if using jslint please allow for the jQuery global and use following options: 
@@ -53,7 +53,7 @@
 	_node.appendChild(_temp1);
 	_temp1 = _d.createElement('A');
 	_temp1.className = 'jstree-anchor';
-	_temp1.setAttribute('href','#');
+	//_temp1.setAttribute('href','#');
 	_temp2 = _d.createElement('I');
 	_temp2.className = 'jstree-icon jstree-themeicon';
 	_temp1.appendChild(_temp2);
@@ -1251,7 +1251,7 @@
 					data		: null,
 					state		: { },
 					li_attr		: { id : false },
-					a_attr		: { href : '#' },
+					a_attr		: { },
 					original	: false
 				}, i, tmp, tid;
 			for(i in this._model.default_state) {
@@ -1363,7 +1363,7 @@
 					data		: d.data,
 					state		: { },
 					li_attr		: { id : false },
-					a_attr		: { href : '#' },
+					a_attr		: { },
 					original	: false
 				};
 			for(i in df) {
@@ -1459,7 +1459,7 @@
 				data		: null,
 				state		: { },
 				li_attr		: { id : false },
-				a_attr		: { href : '#' },
+				a_attr		: { },
 				original	: false
 			};
 			for(i in df) {
@@ -2735,7 +2735,7 @@
 		 * @param  {mixed}   node      the data for the new node (a valid JSON object, or a simple string with the name)
 		 * @param  {mixed}   pos       the index at which to insert the node as an integer, also supported are "first", "last", "before", "after", "inside", default is "last"
 		 * @param  {Function} callback a function to be called once the node is created
-		 * @param  {Boolean} is_loaded internal argument indicating if the parent node was succesfully loaded
+		 * @param  {Boolean} is_loaded internal argument indicating if the parent node was successfully loaded
 		 * @param  {Boolean} full return the full node
 		 * @return {String}            the ID of the newly create node
 		 * @trigger model.jstree, create_node.jstree
